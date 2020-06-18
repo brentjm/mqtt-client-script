@@ -1,10 +1,9 @@
-version: '3.5'
+version: '3.6'
 services:
 
   mqtt:
     build: .
     image: mqtt-client
     container_name: mqtt-client
-    restart: always
-    environment:
-      - DOCKER_HOST=${HOSTNAME}
+    network_mode: "host"
+    restart: "no"

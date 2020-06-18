@@ -1,3 +1,4 @@
 #!/bin/sh
-mosquitto_pub -h 10.131.72.83 -t "ape/7/status" -m "up" -r --will-topic "ape/7/status" --will-payload "down" --will-retain
-sleep infinity
+IP=$(ip -4 address show eth0 | grep inet | awk '{print $2}')
+echo "$IP"
+mosquitto_pub -h 192.168.1.2 -t "ape/3/ip" -m "$IP" -r
