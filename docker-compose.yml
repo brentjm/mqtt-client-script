@@ -6,4 +6,4 @@ services:
     image: mqtt-client
     container_name: mqtt-client
     network_mode: "host"
-    restart: "no"
+    restart: "always"
